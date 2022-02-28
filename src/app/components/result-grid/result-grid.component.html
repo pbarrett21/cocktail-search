@@ -1,0 +1,11 @@
+<h2 *ngIf="drinks.length === 0" class="no-results">No Results</h2>
+
+<mat-grid-list *ngIf="drinks.length > 0"
+               cols="3"
+               rowHeight="1:1">
+
+  <mat-grid-tile *ngFor="let drink of drinks">
+    <app-drink-tile [drink]="drink"></app-drink-tile>
+  </mat-grid-tile>
+
+</mat-grid-list>

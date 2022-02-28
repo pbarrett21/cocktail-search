@@ -1,0 +1,12 @@
+.no-results {
+  display: flex;
+  padding: 2rem;
+  justify-content: center;
+}
+
+::ng-deep .mat-grid-tile-content {
+  justify-content: flex-start !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  margin: 1rem !important;
+}

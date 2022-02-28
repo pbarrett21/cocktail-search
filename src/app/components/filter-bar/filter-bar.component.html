@@ -1,0 +1,48 @@
+<form [formGroup]="filterForm" class="filter-form">
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search Cocktails</mat-label>
+    <input formControlName="searchInput"
+           matInput
+           type="text"
+           placeholder="Search">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Filter Type</mat-label>
+    <mat-select formControlName="filterType">
+      <mat-option *ngFor="let option of filterOptions" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Ordinary Or Cocktail?</mat-label>
+    <mat-select formControlName="ordinaryOrCocktail">
+      <mat-option *ngFor="let option of cocktailOptions" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Alcoholic or Non-Alcoholic?</mat-label>
+    <mat-select formControlName="nonAlcOrAlc">
+      <mat-option *ngFor="let option of alcoholOptions" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button (click)="submitFilterQuery()"
+          [disabled]="!filterForm.valid"
+          id="submit-button"
+          mat-flat-button
+          color="primary"
+  >
+    Search
+  </button>
+
+</form>
+
