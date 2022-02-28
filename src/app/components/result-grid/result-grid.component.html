@@ -1,7 +1,8 @@
 <h2 *ngIf="drinks.length === 0" class="no-results">No Results</h2>
 
+<!-- would want to make this responsive -->
 <mat-grid-list *ngIf="drinks.length > 0"
-               cols="3"
+               cols="4"
                rowHeight="1:1">
 
   <mat-grid-tile *ngFor="let drink of drinks">
